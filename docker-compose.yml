@@ -1,0 +1,14 @@
+version: "3.3"
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - 8080:8080
+    volumes:
+      - ./src:/app/src
+      - ./pom.xml:/app/pom.xml
+    environment:
+      SPRING_DEVTOOLS_RESTART_POLL_INTERVAL: 2s
+      SPRING_DEVTOOLS_RESTART_QUIET_PERIOD: 1s
+      SPRING_DEVTOOLS_REMOTE_SECRET: mysecret
